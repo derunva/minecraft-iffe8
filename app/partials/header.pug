@@ -1,0 +1,38 @@
+.header
+  .header__top
+    .wrapper
+      div Подключайся и играй на наших серверах!!!
+      .icon-menu
+        a(href="#")
+          .icon.icon-vk
+        a(href="#")
+          .icon.icon-fb
+        a(href="#")
+          .icon.icon-en-lang
+  .wrapper
+    .row
+      .header__column.header__column_logo
+        a.logo(href="#")
+          img(src="img/logo.png" alt="")
+      .header__column.header__column_contacts
+        .contacts
+          |контакти
+      .header__column.header__column_btns
+        a.button.m-b-10(href="#") some text
+        a.button(href="#") another text
+      .header__column.header__column_img
+        img(src="img/mc.png" alt="")
+  .header__menu
+    .wrapper
+      ul
+        -
+          var menu = [
+            'главная',
+            'об игре',
+            'список серверов',
+            'наша команда',
+            'донат'
+          ];
+        each item, index in menu
+          li(class=index==0?'active':'')
+            a(href="#") #{item}

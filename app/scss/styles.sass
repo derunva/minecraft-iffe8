@@ -1,0 +1,130 @@
+@import "vars";
+@import "mixins";
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+html
+  height: 100%
+body
+  min-height: 100%
+  line-height: 1.5
+  +propToRem(font-size, 14)
+  font-family: Arial, Helvetica, sans-serif
+img
+  max-width: 100%
+@import "grid";
+@import "icons";
+.icon-menu 
+  font-size: 0
+  a
+    display: inline-block
+    margin-left: 5px
+.logo
+  font-size: 0
+.m-b-10
+  margin-bottom: 10px
+.button
+  display: inline-block
+  text-decoration: none
+  color: #fff
+  background: $secondary-color
+  padding: $v-step/2 5px
+  border-radius: 3px
+  $bottom-line-shadow: inset  0 -1px 0 0 darken(desaturate($secondary-color, 41.55), 24.31)
+  $top-line-shadow: inset 0 1px 0 0 lighten(desaturate(adjust-hue($secondary-color, 10), 8.30), 0.98)
+  box-shadow: $bottom-line-shadow, $top-line-shadow
+  // $text-shadow: 1px 1px 0 #000
+  // @for $i from 1 through 10
+  //   $text-shadow : $text-shadow , #{$i*1px} #{$i*1px} 0 #000
+  // text-shadow: $text-shadow
+  +propToRem(font-size, 16)
+  border-bottom: 1px solid #293224
+.header
+
+  &__column
+    text-align: center
+    padding-top: $v-step/2
+    padding-bottom: $v-step/2
+    display: flex
+    flex-direction: column
+    & > *
+      &:first-child
+        margin-top: auto
+      &:last-child
+        margin-bottom: auto
+    +breakpoint(phablet)
+      max-width: 50%
+    +breakpoint(laptop)
+      &_logo
+        max-width: 16%
+      &_contacts
+        max-width: 30%
+      &_btns
+        max-width: 18%
+      &_img
+        max-width: 36%
+  &__top
+    background: $main-color
+    +propToRem(font-size, 16)
+    color: #fff
+    padding: $v-step/2 0
+    .wrapper
+      display: flex
+      justify-content: center
+      +breakpoint(phablet)
+        justify-content: space-between
+      flex-wrap: wrap
+      align-items: center
+  &__menu
+    ul
+      display: flex
+      flex-wrap: wrap
+      list-style: none
+      justify-content: center
+      border-right: 1px solid #247634 
+      border-left: 1px solid #57e974
+      +breakpoint(laptop)
+        border-right: 2px solid green
+    a
+      display: block
+      color: #ffffff
+      +propToRem(font-size, 16)
+      text-decoration: none
+      text-align: center
+      padding: $v-step/4*3 15px
+      font-weight: bold
+      transition: .3s background ease
+      &:hover
+        background: rgba(255, 255, 255, .1)
+      &:first-letter
+        text-transform: uppercase
+    li
+      flex: 1 1 auto
+      border-right: 1px solid #57e974
+      border-left: 1px solid #247634
+      &.active
+        a
+          background: rgba(255, 255, 255, .1)
+      @media (min-width: 400px)
+        &:nth-child(3)
+          order: 5
+        &:nth-child(4)
+          order: 4
+      +breakpoint(phablet)
+        flex: 1 1 33.33%
+        &:nth-child(3)
+          flex: 1 1 50%
+        &:nth-child(4)
+          flex: 1 1 50%
+      +breakpoint(laptop)
+        &:nth-child(5)
+          order: 5
+        &:nth-child(3)
+          order: 3
+          flex: 1 1 20%
+        &:nth-child(4)
+          order: 4
+          flex: 1 1 20%
+        flex: 1 1 20%
+    background: linear-gradient($main-color-lighten, $main-color-darken)
