@@ -1,0 +1,23 @@
+doctype html
+html(lang="uk")
+  include partials/head
+  body
+    include partials/header
+    -
+      var words = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla leo nunc, volutpat sit amet dictum nec, ultricies eget tortor. Vivamus viverra, dui nec ultricies euismod, erat mi pharetra augue, sed sodales mi quam vitae nisi. Donec finibus quam at laoreet malesuada. Maecenas sit amet gravida leo, sed vestibulum purus. Pellentesque fringilla non massa eget semper. Maecenas eu pretium libero. Vivamus orci nulla, convallis non commodo vel, finibus a massa. Cras fermentum non risus sit amet scelerisque. Nulla tellus tortor, cursus id aliquet ac, volutpat vitae augue. Sed ut ex nunc. Aenean id nibh vitae purus congue finibus nec vel sem.
+
+        Nam elementum est sed mi feugiat, vel suscipit tortor porta. Aenean hendrerit pharetra urna at elementum. Proin in diam sed felis lobortis cursus vitae sit amet massa. Etiam tincidunt pellentesque risus at semper. Integer sit amet eleifend enim, ut faucibus leo. Nulla non ex dolor. Pellentesque consectetur sodales ullamcorper. Vivamus quis nunc iaculis, porta sapien at, maximus turpis.`.split(' ')
+          function getRandomInt(min, max) {
+              min = Math.ceil(min);
+              max = Math.floor(max);
+              return Math.floor(Math.random() * (max - min)) + min; //Включно з мінімальним та виключаючи максимальне значення 
+
+            }
+    -for(var i = 0; i < 100; i++)
+      p
+        -for(var j = 0; j< 10; j++)
+          - var index = getRandomInt(0, words.length)
+          | 
+          | #{words[index]}
+          | 
+    include partials/footer

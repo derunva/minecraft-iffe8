@@ -1,0 +1,28 @@
+-
+  var phones = [
+    {
+      title: 'Админ:',
+      phones : [
+        '+38(068) 333-22-10',
+        '+38(099) 750-50-50'
+      ]
+    },
+    {
+      title: 'По донату:',
+      phones : [
+        '+38(068) 333-22-10'
+      ]
+    }
+  ]
+
+.phone-list
+  each item in phones
+    .phone-note
+      .phone-note__title=item.title
+      .phone-note__numbers
+        each phone in item.phones
+          div
+            -  var roboPhone = phone.replace(/[^\d]/g, '');
+            a(href="tel:"+roboPhone)=phone
+
+

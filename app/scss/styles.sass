@@ -11,6 +11,9 @@ body
   line-height: 1.5
   +propToRem(font-size, 14)
   font-family: Arial, Helvetica, sans-serif
+[href^="tel:"]
+  text-decoration: none
+  color: inherit
 img
   max-width: 100%
 @import "grid";
@@ -128,3 +131,21 @@ img
           flex: 1 1 20%
         flex: 1 1 20%
     background: linear-gradient($main-color-lighten, $main-color-darken)
+.phone-list
+  display: table
+  text-align: left
+  width: 100%
+  color: #0f680e
+  .phone-note
+    
+    display: table-row
+    &>*
+      display: table-cell
+    &__title
+      padding-right: 10px
+    &__numbers
+      +propToRem(font-size, 20)
+  .footer &
+    color: #000
+    .phone-note__title
+      text-align: right
