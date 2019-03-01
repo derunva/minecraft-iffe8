@@ -1,0 +1,7 @@
+mixin listMenu(arr)
+  ul
+    each item in arr
+      li
+        a(href="#")=item.title
+        -if(item.list)
+          +listMenu(item.list)

@@ -3,8 +3,10 @@ html(lang="uk")
   include partials/head
   body
     include partials/header
-    h1 hello!!!!
-    .reason
-      .reason__icon
-        |test 
+    .wrapper
+      .row
+        .column-laptop-1-4
+          include partials/side-menu
+        .column-laptop-3-4
+          |content
     include partials/footer
