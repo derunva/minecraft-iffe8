@@ -9,4 +9,26 @@ html(lang="uk")
           include partials/side-menu
         .column-laptop-3-4
           |content
+          -
+            var articles = [
+              {
+                date: 'sdfdsa',
+                text: 'sadfdasf',
+                img : ''
+              },
+              {
+                date: ' adsf sa',
+                text: 'sfd f dsa',
+                img : ''
+              },
+              {
+                date: 'sa fdsad f',
+                text: 'sad fsad f',
+                img : 'img/article-image.png'
+              }
+            ]
+          .row
+            each item in articles
+              .column-laptop-1-3.m-b-20
+                +article(item)
     include partials/footer

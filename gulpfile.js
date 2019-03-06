@@ -54,7 +54,7 @@ gulp.task('cssBuild', async function(){
   .pipe( gulp.dest('./dist/css/'))
 })
 
-gulp.task('watcher', function(){
+gulp.task('watcher',async function(){
   gulp.watch('./app/img/*', gulp.series('imgCopy'))
   gulp.watch('./app/scss/*.sass', gulp.series('cssBuild'))
   gulp.watch('./app/js/*.js', gulp.series('jsBuild'))
